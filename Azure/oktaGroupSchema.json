@@ -1,0 +1,50 @@
+{
+    "definitions": {},
+    "$id": "http://example.com/root.json",
+    "type": "object",
+    "required": [
+        "oktaRoleGroups"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "oktaoktaRoleGroups": {
+            "$id": "#/properties/oktaRoleGroups",
+            "type": "array",
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "$id": "#/properties/oktaRoleGroups/items/anyOf/0",
+                        "type": "object",
+                        "required": [
+                            "name",
+                            "memberOf"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "name": {
+                                "$id": "#/properties/oktaRoleGroups/items/anyOf/0/properties/name",
+                                "type": "string"
+                            },
+                            "memberOf": {
+                                "$id": "#/properties/oktaRoleGroups/items/anyOf/0/properties/memberOf",
+                                "type": "array",
+                                "additionalItems": true,
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "$id": "#/properties/oktaRoleGroups/items/anyOf/0/properties/memberOf/items/anyOf/0",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "$id": "#/properties/oktaRoleGroups/items/anyOf/0/properties/memberOf/items"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "$id": "#/properties/oktaRoleGroups/items"
+            }
+        }
+    }
+}

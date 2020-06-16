@@ -1,0 +1,80 @@
+{
+    "definitions": {},
+    "$id": "http://example.com/root.json",
+    "type": "object",
+    "required": [
+        "roleGroups"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "roleGroups": {
+            "$id": "#/properties/roleGroups",
+            "type": "array",
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "$id": "#/properties/roleGroups/items/anyOf/0",
+                        "type": "object",
+                        "required": [
+                            "name",
+                            "description",
+                            "members",
+                            "memberOf"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "name": {
+                                "$id": "#/properties/roleGroups/items/anyOf/0/properties/name",
+                                "type": "string"
+                            },
+                            "description": {
+                                "$id": "#/properties/roleGroups/items/anyOf/0/properties/description",
+                                "type": "string"
+                            },
+                            "members": {
+                                "$id": "#/properties/roleGroups/items/anyOf/0/properties/members",
+                                "type": "object",
+                                "required": [
+                                    "identity"
+                                ],
+                                "additionalProperties": true,
+                                "properties": {
+                                    "identity": {
+                                        "$id": "#/properties/roleGroups/items/anyOf/0/properties/members/properties/identity",
+                                        "type": "array",
+                                        "additionalItems": true,
+                                        "items": {
+                                            "anyOf": [
+                                                {
+                                                    "$id": "#/properties/roleGroups/items/anyOf/0/properties/members/properties/identity/items/anyOf/0",
+                                                    "type": "string"
+                                                }
+                                            ],
+                                            "$id": "#/properties/roleGroups/items/anyOf/0/properties/members/properties/identity/items"
+                                        }
+                                    }
+                                }
+                            },
+                            "memberOf": {
+                                "$id": "#/properties/roleGroups/items/anyOf/0/properties/memberOf",
+                                "type": "array",
+                                "additionalItems": true,
+                                "items": {
+                                    "anyOf": [
+                                        {
+                                            "$id": "#/properties/roleGroups/items/anyOf/0/properties/memberOf/items/anyOf/0",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "$id": "#/properties/roleGroups/items/anyOf/0/properties/memberOf/items"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "$id": "#/properties/roleGroups/items"
+            }
+        }
+    }
+}
