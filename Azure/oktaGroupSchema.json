@@ -1,6 +1,9 @@
 {
     "definitions": {
-
+        "nonEmptyString": {
+            "type": "string",
+            "minLength": 1
+        }
     },
     "$id": "http://example.com/root.json",
     "type": "object",
