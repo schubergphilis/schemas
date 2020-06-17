@@ -1,5 +1,7 @@
 {
-    "definitions": {},
+    "definitions": {
+
+    },
     "$id": "http://example.com/root.json",
     "type": "object",
     "required": [
@@ -24,7 +26,8 @@
                         "properties": {
                             "name": {
                                 "$id": "#/properties/oktaRoleGroups/items/anyOf/0/properties/name",
-                                "type": "string"
+                                "type": "string",
+                                "$ref": "#/definitions/nonEmptyString"
                             },
                             "memberOf": {
                                 "$id": "#/properties/oktaRoleGroups/items/anyOf/0/properties/memberOf",
