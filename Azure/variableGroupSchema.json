@@ -1,0 +1,36 @@
+{
+    "definitions": {
+        "nonEmptyString": {
+            "type": "string",
+            "minLength": 1
+        }
+    },
+    "$id": "http://example.com/root.json",
+    "type": "object",
+    "required": [
+        "variableGroups"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "variableGroups": {
+            "$id": "#/properties/variableGroups",
+            "type": "array",
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "$id": "#/properties/variableGroups/items/anyOf/0",
+                        "type": "object",
+                        "required": [
+                            "name",
+                            "project",
+                            "description",
+                            "variables"
+                        ]
+                    }
+                ],
+                "$id": "#/properties/variableGroups/items"
+            }
+        }
+    }
+}
